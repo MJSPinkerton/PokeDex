@@ -1,6 +1,8 @@
 package main
 
-import "github.com/MJSPinkerton/PokeDex/internal/pokeapi"
+import (
+	"github.com/MJSPinkerton/PokeDex/internal/pokeapi"
+)
 
 type config struct {
 	commands            map[string]cliCommand
