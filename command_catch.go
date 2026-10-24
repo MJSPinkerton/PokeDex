@@ -22,6 +22,7 @@ func commandCatch(config *config, args ...string) error {
 		fmt.Printf("%v escaped!\n", pokemon.Name)
 	} else {
 		fmt.Printf("%v was caught!\n", pokemon.Name)
+		fmt.Println("You may now inspect it with the inspect command.")
 		config.PokeDex.Add(pokemon)
 	}
 
