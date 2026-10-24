@@ -9,4 +9,5 @@ type config struct {
 	PokeApiClient       pokeapi.Client
 	NextLocationURL     *string
 	PreviousLocationURL *string
+	PokeDex             PokeDex
 }
