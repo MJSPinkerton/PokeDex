@@ -8,7 +8,7 @@ import (
 )
 
 // ListLocations -
-func (c *Client) GetPokemonInfo(pageURL *string, params []string) (PokemonEndpointResponse, error) {
+func (c *Client) GetPokemonInfo(pageURL *string, params ...string) (PokemonEndpointResponse, error) {
 	if len(params) <= 0 {
 		return PokemonEndpointResponse{}, errors.New("No pokemon provided")
 	}

@@ -8,15 +8,11 @@ import (
 )
 
 // ListLocations -
-func (c *Client) ListPokemonFromArea(pageURL *string, params []string) (DeepLocationResponse, error) {
+func (c *Client) ListPokemonFromArea(params string) (DeepLocationResponse, error) {
 	if len(params) <= 0 {
 		return DeepLocationResponse{}, errors.New("No location provided")
 	}
-	url := baseURL + "/location-area/" + params[0]
-	if pageURL != nil {
-		url = *pageURL
-	}
-
+	url := baseURL + "/location-area/" + params
 	response, exists := c.pokeCache.Get(url)
 	if exists {
 		locationResponse := DeepLocationResponse{}
