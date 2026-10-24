@@ -55,7 +55,7 @@ type LocationArea struct {
 	PokemonEncounters    []PokemonEncounter    `json:"pokemon_encounters"`
 }
 
-type APIResponse struct {
+type ShallowLocationResponse struct {
 	Count    int     `json:"count"`
 	Next     string  `json:"next"`
 	Previous *string `json:"previous"`
@@ -71,7 +71,7 @@ func commandMap(config *config) error {
 		return err
 	}
 	defer res.Body.Close()
-	var apiResponse APIResponse
+	var apiResponse ShallowLocationResponse
 	decoder := json.NewDecoder(res.Body)
 	err = decoder.Decode(&apiResponse)
 	if err != nil {
@@ -99,7 +99,7 @@ func commandMapBack(config *config) error {
 		return err
 	}
 	defer res.Body.Close()
-	var apiResponse APIResponse
+	var apiResponse ShallowLocationResponse
 	decoder := json.NewDecoder(res.Body)
 	err = decoder.Decode(&apiResponse)
 	if err != nil {

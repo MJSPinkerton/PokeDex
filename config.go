@@ -2,6 +2,6 @@ package main
 
 type config struct {
 	commands map[string]cliCommand
-	Next     string
+	Next     *string
 	Previous *string
 }
